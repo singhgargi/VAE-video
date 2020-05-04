@@ -18,7 +18,7 @@ def pull_vidcap(vidcap, size=64, time_slice_factor=1):
     return np.array(X)
 
 def main(path_to_file):
-    file = path_to_file + 'a4.sax.mov'
+    file = path_to_file + 'Breakfast_Nonsocial.mov'
     vidcap = cv2.VideoCapture(file)
 
     # count the frames -- should be ~30/second
@@ -48,4 +48,4 @@ def main(path_to_file):
     np.save('video_idx.npy', y)
 
 if __name__ == "__main__":
-    main('./Zacks06Exp1_movies/')
+    main('./data/')
