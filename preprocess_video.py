@@ -34,7 +34,7 @@ def main(path_to_file):
 
     X, y = [], []
 
-    files = 'a4.sax.mov b1.bed.mov c2.dishes.mov e5.ironing.mov e5.practice.mov'.split()
+    files = 'Breakfast_Nonsocial.mov Laundry_Nonsocial.mov legosShort.mov Library_Nonsocial.mov Party_Nonsocial.mov wl_dv.mov'.split()
     for ii, file in enumerate(files):
         vidcap = cv2.VideoCapture(path_to_file + file)
         _X = pull_vidcap(vidcap)
@@ -48,4 +48,4 @@ def main(path_to_file):
     np.save('video_idx.npy', y)
 
 if __name__ == "__main__":
-    main('./data/')
+    main('./stimuli/')
