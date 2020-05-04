@@ -18,19 +18,19 @@ def pull_vidcap(vidcap, size=64, time_slice_factor=1):
     return np.array(X)
 
 def main(path_to_file):
-    file = path_to_file + 'Breakfast_Nonsocial.mov'
-    vidcap = cv2.VideoCapture(file)
+#     file = path_to_file + 'Breakfast_Nonsocial.mov'
+#     vidcap = cv2.VideoCapture(file)
 
-    # count the frames -- should be ~30/second
-    n_frames = 0
-    while (vidcap.isOpened()):
-        try:
-            ret, frame = vidcap.read()
-            n_frames += 1
-        except:
-            break
+#     # count the frames -- should be ~30/second
+#     n_frames = 0
+#     while (vidcap.isOpened()):
+#         try:
+#             ret, frame = vidcap.read()
+#             n_frames += 1
+#         except:
+#             break
 
-    print("There are %d frames in 185s, or %f frames/second" % (n_frames, n_frames / 185.))
+#     print("There are %d frames in 185s, or %f frames/second" % (n_frames, n_frames / 185.))
 
     X, y = [], []
 
