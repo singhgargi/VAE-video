@@ -168,7 +168,7 @@ def train(
             optimizer.step()
             if i % print_every == 0:
                 print("(Batch {}) Negative log likelihood is {:.5f}, mmd loss is {:.5f}".format(
-                    i, nll.data[0], mmd.data[0]))
+                    i, nll.data, mmd.data))
             if i % plot_every == 0:
                 gen_z = Variable(
                     torch.randn(25, z_dim),
