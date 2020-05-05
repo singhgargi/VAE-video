@@ -213,7 +213,9 @@ def main(z_dim=100, batch_size=200, n_epochs=10,  use_cuda=False, debug=False):
     # load the datasets
     # load the pre-processed data
     print('Loading Data...')
-    X = np.array(np.load('../video_color_proc_64.npy'), dtype=float)
+    X1 = np.load('../video_color_proc_64.npy')
+    print(type(X1))
+    X = np.array(X1, dtype=float)
     if debug:
         n = np.shape(X)[0]
         X = X[range(0, n, 10), :, :, :]
