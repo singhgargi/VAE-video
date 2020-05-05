@@ -44,8 +44,8 @@ def main(path_to_file):
     X = np.concatenate(X, axis=0)
     y = np.concatenate(y)
 
-    np.save('video_color_proc_64.npy', X)
-    np.save('video_idx.npy', y)
+    np.save('../drive/My Drive/video_color_proc_64.npy', X)
+    np.save('../drive/My Drive/video_idx.npy', y)
 
 if __name__ == "__main__":
     main('../')
