@@ -48,4 +48,4 @@ def main(path_to_file):
     np.save('video_idx.npy', y)
 
 if __name__ == "__main__":
-    main('./')
+    main('../')
