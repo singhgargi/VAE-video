@@ -213,7 +213,7 @@ def main(z_dim=100, batch_size=200, n_epochs=10,  use_cuda=False, debug=False):
     # load the datasets
     # load the pre-processed data
     print('Loading Data...')
-    X1 = np.load('../video_color_proc_64.npy')
+    X1 = np.load('../drive/My Drive/video_color_proc_64.npy')
     print(type(X1))
     X = np.array(X1, dtype=float)
     if debug:
@@ -244,8 +244,8 @@ def main(z_dim=100, batch_size=200, n_epochs=10,  use_cuda=False, debug=False):
     )
     Z, X_reconstructed = embed(video_to_embed, model, z_dim)
 
-    np.save('video_color_Z_embedded_64.npy', Z)
-    np.save('video_color_X_reconstructed_64.npy', X_reconstructed)
+    np.save('../drive/My Drive/video_color_Z_embedded_64.npy', Z)
+    np.save('../drive/My Drive/video_color_X_reconstructed_64.npy', X_reconstructed)
 
     print('Done!')
 
