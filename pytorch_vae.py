@@ -182,7 +182,7 @@ def train(
                 plt.subplots(figsize=(10,10))
                 plt.axis('off')
                 plt.imshow(convert_to_display(samples))
-                plt.savefig('samples_batch_{}.png'.format(i), dpi=300)
+                plt.savefig('../drive/My Drive/samples_batch_{}.png'.format(i), dpi=300)
     return model
 
 
@@ -230,7 +230,7 @@ def main(z_dim=100, batch_size=200, n_epochs=10,  use_cuda=False, debug=False):
     print('Begin Training')
     model = train(video_train, z_dim=z_dim, n_epochs=n_epochs,
                   use_cuda=use_cuda, size_=8)
-    torch.save(model, 'trained_vae_64.pt')
+    torch.save(model, '../drive/My Drive/trained_vae_64.pt')
     print('Trainig complete')
 
     #~~~~~~~~~~~~~~~~~~~~~~~~~~
