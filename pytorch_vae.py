@@ -139,7 +139,7 @@ def train(
     plot_every=500,
     n_channel=3,
     size_=8):
-    print("n_epochs ",n_epochs)
+
     model = Model(z_dim, n_channel, size_)
     if use_cuda:
         model = model.cuda()
@@ -147,10 +147,6 @@ def train(
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
     i = -1
     count = 0
-    print("n_epochs ",n_epochs)
-    for epoch in range(10):
-        count = count + 1
-    print("count %d",count)
     for epoch in range(n_epochs):
         for images in dataloader:
             i += 1
@@ -232,7 +228,6 @@ def main(z_dim=100, batch_size=200, n_epochs=10,  use_cuda=False, debug=False):
         pin_memory=True,
         )
     print('Begin Training')
-    print("n_epochs ",n_epochs)
     model = train(video_train, z_dim=z_dim, n_epochs=n_epochs,
                   use_cuda=use_cuda, size_=8)
     torch.save(model, '../drive/My Drive/trained_vae_64.pt')
@@ -255,4 +250,4 @@ def main(z_dim=100, batch_size=200, n_epochs=10,  use_cuda=False, debug=False):
     print('Done!')
 
 if __name__ == "__main__":
-    main(z_dim=100, batch_size=256, n_epochs=4000, use_cuda=True, debug=False)
+    main(z_dim=100, batch_size=256, n_epochs=100, use_cuda=True, debug=False)
