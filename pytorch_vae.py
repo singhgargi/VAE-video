@@ -250,4 +250,4 @@ def main(z_dim=100, batch_size=200, n_epochs=10,  use_cuda=False, debug=False):
     print('Done!')
 
 if __name__ == "__main__":
-    main(z_dim=100, batch_size=256, n_epochs=1000, use_cuda=True, debug=False)
+    main(z_dim=100, batch_size=256, n_epochs=400, use_cuda=True, debug=False)
