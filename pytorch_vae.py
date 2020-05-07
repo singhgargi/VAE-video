@@ -226,8 +226,20 @@ def main(z_dim=100, batch_size=200, n_epochs=10,  use_cuda=False, debug=False):
         batch_size=batch_size, shuffle=True, num_workers=3,
         pin_memory=True,
         )
+    video_train1 = torch.utils.data.DataLoader(
+        np.transpose(X, axes=[0, 3, 1, 2]),
+        batch_size=2, shuffle=True, num_workers=3,
+        pin_memory=True,
+        )
     print('Begin Training')
-    print(type(video_train))
+    count1 = 0
+    for i in video_train:
+        count1 = count1 + 1
+    count2 = 0
+    for i in video_train1:
+        count2 = count2 + 1
+    print("count1 %d",count1)
+    print("count2 %d",count2)
     model = train(video_train, z_dim=z_dim, n_epochs=n_epochs,
                   use_cuda=use_cuda, size_=8)
     torch.save(model, '../drive/My Drive/trained_vae_64.pt')
