@@ -139,7 +139,7 @@ def train(
     plot_every=500,
     n_channel=3,
     size_=8):
-
+    print("n_epochs ",n_epochs)
     model = Model(z_dim, n_channel, size_)
     if use_cuda:
         model = model.cuda()
@@ -232,6 +232,7 @@ def main(z_dim=100, batch_size=200, n_epochs=10,  use_cuda=False, debug=False):
         pin_memory=True,
         )
     print('Begin Training')
+    print("n_epochs ",n_epochs)
     model = train(video_train, z_dim=z_dim, n_epochs=n_epochs,
                   use_cuda=use_cuda, size_=8)
     torch.save(model, '../drive/My Drive/trained_vae_64.pt')
