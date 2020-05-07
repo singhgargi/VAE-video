@@ -148,9 +148,10 @@ def train(
     i = -1
     count = 0
     for epoch in range(n_epochs):
-        for images in dataloader:
-            print(count)
-            count = count + 1
+        count = count + 1
+#         for images in dataloader:
+#             print(count)
+#             count = count + 1
     print("count %d",count)
     for epoch in range(n_epochs):
         for images in dataloader:
