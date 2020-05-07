@@ -227,7 +227,7 @@ def main(z_dim=100, batch_size=200, n_epochs=10,  use_cuda=False, debug=False):
         pin_memory=True,
         )
     print('Begin Training')
-    print(type(dataloader))
+    print(type(video_train))
     model = train(video_train, z_dim=z_dim, n_epochs=n_epochs,
                   use_cuda=use_cuda, size_=8)
     torch.save(model, '../drive/My Drive/trained_vae_64.pt')
