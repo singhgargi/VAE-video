@@ -145,7 +145,6 @@ def train(
         model = model.cuda()
     #print(model)
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
-    print(type(dataloader))
     i = -1
     for epoch in range(n_epochs):
         for images in dataloader:
@@ -215,7 +214,6 @@ def main(z_dim=100, batch_size=200, n_epochs=10,  use_cuda=False, debug=False):
     # load the pre-processed data
     print('Loading Data...')
     X1 = np.load('../drive/My Drive/video_color_proc_64.npy')
-    print(type(X1))
     X = np.array(X1, dtype=float)
     if debug:
         n = np.shape(X)[0]
@@ -229,6 +227,7 @@ def main(z_dim=100, batch_size=200, n_epochs=10,  use_cuda=False, debug=False):
         pin_memory=True,
         )
     print('Begin Training')
+    print(type(dataloader))
     model = train(video_train, z_dim=z_dim, n_epochs=n_epochs,
                   use_cuda=use_cuda, size_=8)
     torch.save(model, '../drive/My Drive/trained_vae_64.pt')
