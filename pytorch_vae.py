@@ -147,8 +147,8 @@ def train(
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
     i = -1
     count = 0
-    for epoch in range(n_epochs):
-        for images in dataloader:
+    for images in dataloader:
+            print(count)
             count = count + 1
     print("count %d",count)
     for epoch in range(n_epochs):
