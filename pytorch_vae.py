@@ -145,6 +145,7 @@ def train(
         model = model.cuda()
     #print(model)
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
+    print(type(dataloader))
     i = -1
     for epoch in range(n_epochs):
         for images in dataloader:
