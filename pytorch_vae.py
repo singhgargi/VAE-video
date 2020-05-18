@@ -183,7 +183,7 @@ def train(
                 plt.subplots(figsize=(10,10))
                 plt.axis('off')
                 plt.imshow(convert_to_display(samples))
-                plt.savefig('../drive/My Drive/stimuli/Laundry_Nonsocial/samples_batch_{}.png'.format(i), dpi=300)
+                plt.savefig('../drive/My Drive/stimuli/Party_Nonsocial/samples_batch_{}.png'.format(i), dpi=300)
     return model
 
 
@@ -214,7 +214,7 @@ def main(z_dim=100, batch_size=200, n_epochs=10,  use_cuda=False, debug=False):
     # load the datasets
     # load the pre-processed data
     print('Loading Data...')
-    X1 = np.load('../drive/My Drive/stimuli/Laundry_Nonsocial/video_color_proc_64.npy')
+    X1 = np.load('../drive/My Drive/stimuli/Party_Nonsocial/video_color_proc_64.npy')
     X = np.array(X1, dtype=float)
     if debug:
         n = np.shape(X)[0]
@@ -230,7 +230,7 @@ def main(z_dim=100, batch_size=200, n_epochs=10,  use_cuda=False, debug=False):
     print('Begin Training')
     model = train(video_train, z_dim=z_dim, n_epochs=n_epochs,
                   use_cuda=use_cuda, size_=8)
-    torch.save(model, '../drive/My Drive/stimuli/Laundry_Nonsocial/trained_vae_64.pt')
+    torch.save(model, '../drive/My Drive/stimuli/Party_Nonsocial/trained_vae_64.pt')
     print('Trainig complete')
 
     #~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -244,8 +244,8 @@ def main(z_dim=100, batch_size=200, n_epochs=10,  use_cuda=False, debug=False):
     )
     Z, X_reconstructed = embed(video_to_embed, model, z_dim)
 
-    np.save('../drive/My Drive/stimuli/Laundry_Nonsocial/video_color_Z_embedded_64.npy', Z)
-    np.save('../drive/My Drive/stimuli/Laundry_Nonsocial/video_color_X_reconstructed_64.npy', X_reconstructed)
+    np.save('../drive/My Drive/stimuli/Party_Nonsocial/video_color_Z_embedded_64.npy', Z)
+    np.save('../drive/My Drive/stimuli/Party_Nonsocial/video_color_X_reconstructed_64.npy', X_reconstructed)
 
     print('Done!')
 
