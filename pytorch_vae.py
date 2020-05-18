@@ -214,7 +214,7 @@ def main(z_dim=100, batch_size=200, n_epochs=10,  use_cuda=False, debug=False):
     # load the datasets
     # load the pre-processed data
     print('Loading Data...')
-    X1 = np.load('../drive/My Drive/video_color_proc_64.npy')
+    X1 = np.load('../drive/My Drive/stimuli/Breakfast_Nonsocial/video_color_proc_64.npy')
     X = np.array(X1, dtype=float)
     if debug:
         n = np.shape(X)[0]
